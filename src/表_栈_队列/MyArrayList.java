@@ -116,9 +116,33 @@ public class MyArrayList<AnyType> implements Iterable<AnyType> {
         MyArrayList.this.remove(--current);
     }
 
+    public String toString( )
+    {
+        StringBuilder sb = new StringBuilder( "[ " );
+
+        for( AnyType x : this )
+            sb.append( x + " " );
+        sb.append( "]" );
+
+        return new String( sb );
+    }
+
+}
 
 
+class TestArrayList
+{
+    public static void main( String [ ] args ){
+        MyArrayList<Integer> list = new MyArrayList<>();
+        for (int i = 0; i < 30 ; i++) {
+            list.add(i);
+        }
+        for( int i = 20; i < 30; i++ )
+            list.add( 0, i );
 
+        list.remove( 0 );
+        list.remove( list.size( ) - 1 );
+        System.out.println(list);
 
-
+    }
 }
