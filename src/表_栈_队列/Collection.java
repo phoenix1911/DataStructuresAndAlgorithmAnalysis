@@ -20,7 +20,6 @@ public interface Collection<AnyType> extends Iterable<AnyType> {
 
     java.util.Iterator<AnyType> iterator();
 
-
     }
 
 
