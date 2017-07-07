@@ -193,7 +193,7 @@ public class MyLinkedList<AnyType> implements Iterable<AnyType>
     }
 
     /**
-     * Obtains an Iterator object used to traverse the collection.
+     * Obtains an 表_栈_队列.Iterator object used to traverse the collection.
      * @return an iterator positioned prior to the first element.
      */
     public java.util.Iterator<AnyType> iterator( )
