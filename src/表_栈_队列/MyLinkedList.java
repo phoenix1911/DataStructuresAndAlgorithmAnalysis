@@ -216,7 +216,7 @@ class TestLinkedList
         {
             itr.next( );
             itr.remove( );
-            System.out.println( lst );
+            System.out.println( lst);
         }
     }
 }
