@@ -166,6 +166,14 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
 
     }
 
+    private int height( BinaryNode<AnyType> t )
+    {
+        if( t == null )
+            return -1;
+        else
+            return 1 + Math.max( height( t.left ), height( t.right ) );
+    }
+
 
 
 
