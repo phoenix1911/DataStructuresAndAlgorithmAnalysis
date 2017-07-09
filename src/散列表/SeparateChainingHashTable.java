@@ -11,6 +11,7 @@ public class SeparateChainingHashTable<AnyType> {
      * 如果当一个元素被插入是与一个已经插入的元素散列到相同的只，那么就产生一个冲突
      * 解决冲突的第一个方法通常叫做 分离链接法 separete chaining
      * 其做法是将散列到同一个值的所有元素保留到一个表中；
+     * 标准库包括set和map的散列表的实现，即HashSet和HashMap类，这两个类通常是用分离链接散列实现的
      */
     private static final int DEFAULT_TABLE_SIZE = 101;
 
@@ -66,12 +67,12 @@ public class SeparateChainingHashTable<AnyType> {
     private void rehash() {
         List<AnyType> [ ]  oldLists = theLists;
 
-        // Create new double-sized, empty table
+
         theLists = new List[ nextPrime( 2 * theLists.length ) ];
         for( int j = 0; j < theLists.length; j++ )
             theLists[ j ] = new LinkedList<>( );
 
-        // Copy table over
+
         currentSize = 0;
         for( List<AnyType> list : oldLists )
             for( AnyType item : list )
