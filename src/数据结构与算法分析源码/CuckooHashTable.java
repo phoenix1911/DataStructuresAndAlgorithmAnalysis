@@ -158,21 +158,21 @@ public class CuckooHashTable<AnyType>
     
     private void rehash( )
     {
-        //System.out.println( "NEW HASH FUNCTIONS " + array.length );
+        System.out.println( "NEW HASH FUNCTIONS " + array.length );
         hashFunctions.generateNewFunctions( );
         rehash( array.length );
     }
     
     private void rehash( int newLength )
     {
-        //System.out.println( "REHASH: " + array.length + " " + newLength + " " + currentSize );
-        AnyType [ ] oldArray = array;    // Create a new double-sized, empty table
+        System.out.println( "REHASH: " + array.length + " " + newLength + " " + currentSize );
+        AnyType [ ] oldArray = array;
             
         allocateArray( nextPrime( newLength ) );
         
         currentSize = 0;
         
-            // Copy table over
+
         for( AnyType str : oldArray )
             if( str != null )
                 insert( str );
